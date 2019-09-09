@@ -18,26 +18,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQ5-2A-eah">
-                                <rect key="frame" x="16" y="44" width="343" height="148"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQ5-2A-eah">
+                                <rect key="frame" x="16" y="54" width="343" height="111"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="111" id="3LE-WK-QaP"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="111" id="EH8-Gs-jVh"/>
+                                    <constraint firstAttribute="height" constant="111" id="yvl-zy-yPB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
                                 <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbw-ti-oE2">
-                                <rect key="frame" x="106" y="200" width="162" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbw-ti-oE2">
+                                <rect key="frame" x="126" y="171" width="123" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="162" id="vAU-Ap-kdu"/>
+                                </constraints>
                                 <state key="normal" title="Show Message"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="vAU-Ap-kdu"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="showMessagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5SS-6H-Dhd"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UsS-Nb-kYs">
+                                <rect key="frame" x="16" y="207" width="343" height="540"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UsS-Nb-kYs" secondAttribute="bottom" constant="31" id="476-6y-O1u"/>
+                            <constraint firstItem="wQ5-2A-eah" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6uG-cQ-WDB"/>
+                            <constraint firstItem="wQ5-2A-eah" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="CkV-C6-qrr"/>
+                            <constraint firstItem="wQ5-2A-eah" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="H4e-9b-lqL"/>
+                            <constraint firstItem="wQ5-2A-eah" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="MIL-oJ-Vmz"/>
+                            <constraint firstItem="Tbw-ti-oE2" firstAttribute="top" secondItem="wQ5-2A-eah" secondAttribute="bottom" constant="6" id="N0g-l8-qhv"/>
+                            <constraint firstItem="UsS-Nb-kYs" firstAttribute="top" secondItem="Tbw-ti-oE2" secondAttribute="bottom" constant="8" id="P63-BY-ybt"/>
+                            <constraint firstItem="UsS-Nb-kYs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Uvk-bi-kT6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UsS-Nb-kYs" secondAttribute="trailing" constant="16" id="bSw-zN-S2O"/>
+                            <constraint firstItem="wQ5-2A-eah" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cpl-um-EFm"/>
+                            <constraint firstItem="UsS-Nb-kYs" firstAttribute="top" secondItem="Tbw-ti-oE2" secondAttribute="bottom" constant="6" id="cxj-Nj-coc"/>
+                            <constraint firstItem="Tbw-ti-oE2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="dle-UI-KKB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wQ5-2A-eah" secondAttribute="trailing" constant="16" id="dog-FW-cXI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tbw-ti-oE2" secondAttribute="trailing" constant="126" id="iJx-bR-9OO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wQ5-2A-eah" secondAttribute="trailing" constant="16" id="jgI-8x-gDt"/>
+                            <constraint firstItem="UsS-Nb-kYs" firstAttribute="top" secondItem="Tbw-ti-oE2" secondAttribute="bottom" constant="8" id="mFV-Q9-Pgv"/>
+                            <constraint firstItem="Tbw-ti-oE2" firstAttribute="top" secondItem="wQ5-2A-eah" secondAttribute="bottom" constant="6" id="pFb-Tp-Tbl"/>
+                            <constraint firstItem="wQ5-2A-eah" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="uk3-Hn-1hH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wQ5-2A-eah" secondAttribute="trailing" constant="16" id="zan-pZ-fZP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="mFV-Q9-Pgv"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="awesomeImageView" destination="UsS-Nb-kYs" id="0cG-gJ-Q4Z"/>
                         <outlet property="messageLabel" destination="wQ5-2A-eah" id="qgF-HI-6Eq"/>
                     </connections>
                 </viewController>
