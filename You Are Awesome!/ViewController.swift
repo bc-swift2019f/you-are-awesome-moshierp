@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
    
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var awesomeImageView: UIImageView!
-     var index = -1
-     var imageIndex = -1
+    var awesomePlayer = AVAudioPlayer()
+    var index = -1
+    var imageIndex = -1
+    var soundIndex = -1
     let numberOfImages = 10
+    let numberOfSounds = 6
     
     // Code below executes when the app's view first loads
     override func viewDidLoad() {
@@ -43,6 +47,28 @@ class ViewController: UIViewController {
         
         imageIndex = newIndex
         awesomeImageView.image = UIImage(named: "image\(imageIndex)")
+     
+        repeat {
+            newIndex = Int.random(in: 0..<numberOfSounds)
+        } while soundIndex == newIndex
+        
+        soundIndex = newIndex
+      
+        
+        //play sound
+        var soundName = "sound\(soundIndex)"
+        if let sound = NSDataAsset(name: soundName) {
+            do {
+            try awesomePlayer = AVAudioPlayer(data: sound.data)
+            } catch {
+                print("ERROR: data in \(soundName) couldn't be played as a sound.")
+            }
+        } else {
+            print("ERROR: file \(soundName) didn't load.")
+        }
+        
+        
+        
     }
 }
 
