@@ -14,6 +14,7 @@ class ViewController: UIViewController {
    
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var awesomeImageView: UIImageView!
+    @IBOutlet weak var soundSwitch: UISwitch!
     var awesomePlayer = AVAudioPlayer()
     var index = -1
     var imageIndex = -1
@@ -47,6 +48,12 @@ class ViewController: UIViewController {
         }
         
     }
+    @IBAction func soundSwitchPressed(_ sender: UISwitch) {
+        if soundSwitch.isOn == false && soundIndex != -1 {
+            awesomePlayer.stop()
+        }
+    }
+    
     
     @IBAction func showMessagePressed(_ sender: UIButton) {
         
@@ -60,15 +67,14 @@ class ViewController: UIViewController {
         
         imageIndex = nonRepeatingRandom(lastNumber: imageIndex, maxValue: numberOfImages)
         awesomeImageView.image = UIImage(named: "image\(imageIndex)")
-     
+        if soundSwitch.isOn == true {
         soundIndex = nonRepeatingRandom(lastNumber: soundIndex, maxValue: numberOfSounds)
         
         let soundName = "sound\(soundIndex)"
         playSound(soundName: soundName, audioPlayer: &awesomePlayer)
         
         
-        
-        
+        }
         
     }
 }
